@@ -1,0 +1,17 @@
+<div class="w-50 p-3" >
+    <h1>{{title}}</h1> <!-- printing title -->
+    <br>
+    <input type="text" placeholder="Enter Task" #task /> <br><br> <!-- input box takes task  -->
+    <button type="button" class="btn btn-primary" (click)="addTask(task.value)">Add Task</button> <br><br>
+    <!-- button performs inserting task into list by taking task value -->
+    <!-- an angular loop to print list values -->
+    <ul class="list-group" *ngFor="let item of list">
+        <div>
+            <li class="list-group-item">
+                {{item.name}}
+                <button id="b" type="button" class="btn btn-danger" (click)="removeTask(item.id)">Remove</button>
+                <!-- button performs deleting task from list by taking task id  -->
+            </li>
+        </div>
+    </ul>
+</div>
